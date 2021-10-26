@@ -1,9 +1,13 @@
 import mockData from "./mockData";
 import './app.scss';
+import TaskListComponent from "./TaskListComponent";
 // import './app.scss';
 
 function App() {
   const taskGroups = mockData;
+  const onClickAction = (value) => {
+      console.log('sumando y calculando ', value);
+  }
   return (
     <div className="app">
       <header className="app-header">
@@ -13,27 +17,7 @@ function App() {
       <section className="app-content">
         {
           taskGroups.map(group => (
-            <div className="app-accordion">
-              <header className="app-contentHeader"> 
-              <h2><i class="fa fa-file-contract" aria-hidden="true"></i> Group 1</h2>
-              </header>
-                <ul className="app-groupList">
-                  <li className="app-groupItem">
-                      <ul className="app-itemList">
-                        <li>
-                          <span className="app-toggle">
-                          </span>
-                            Task 2-1
-                          </li>
-                          <li>
-                            <span className="app-toggle">
-                            </span>
-                              Task 2-2
-                          </li>
-                      </ul>
-                  </li>
-                </ul>
-            </div>
+            <TaskListComponent onClickAction={onClickAction} tasks={group.tasks} name={group.name} />
           ))
         }
       </section>
