@@ -38,7 +38,7 @@ const mockData = [
         checked: true
       },
       {
-       description: "Jump three time with one leg",
+        name: "Avoid the annoying neighbor",
         value: 2,
         checked: false
       },
