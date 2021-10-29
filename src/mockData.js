@@ -45,19 +45,19 @@ const mockData = [
 			},
 			{
 				id: 7,
-				name: 'Avoid the annoying neighbor',
+				description: 'Avoid the annoying neighbor',
 				value: 2,
 				checked: false
 			},
 			{
 				id: 8,
-				name: 'Say hello to a random person',
+				description: 'Say hello to a random person',
 				value: 21,
 				checked: false
 			},
 			{
 				id: 9,
-				name: 'Fill the description in at least 3 places',
+				description: 'Fill the description in at least 3 places',
 				value: 12,
 				checked: true
 			}

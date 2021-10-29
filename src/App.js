@@ -52,7 +52,6 @@ function App() {
 
 	const setPercenteges = () => {
 		const completed = tasks.filter((x) => x.checked);
-		debugger;
 		const percentege = completed.reduce((acc, curr) => {
 			return acc + (curr.value / tot) * 100;
 		}, 0);
@@ -101,7 +100,7 @@ function App() {
 				<h1> Grouped Tasks </h1>
 				<div className="app-progresBarContainer">
 					<span style={style.progressBar} className="app-progressBar">
-						{percentege.toFixed(0)}
+						<span className="app-progressBarContent">{`${percentege.toFixed(0)}%`}</span>
 					</span>
 				</div>
 			</header>

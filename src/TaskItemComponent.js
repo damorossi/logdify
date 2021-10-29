@@ -13,7 +13,7 @@ const TaskItemComponent = ({ description, value, id, checked, onClickAction, onC
 	return (
 		<li className="item" onClick={handleClick}>
 			<span className={classValue}></span>
-			<p className="item-description">{description}</p>- {id}
+			<p className="item-description">{description}</p>
 		</li>
 	);
 };

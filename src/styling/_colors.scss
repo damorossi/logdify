@@ -2,11 +2,11 @@ $_white: #fff;
 $_light-grey1: #e5e5e5;
 $_mid-grey: #ccc;
 $_dark-grey: #999;
-$_light-grey: #F2FBFA;
+$_light-grey: #f2fbfa;
 $_dark: #333;
 
 $_black: #000;
-$_green: #00B797;
+$_green: #00b797;
 // bg colors:
 $bg-common-widget: $_white;
 $bg-layout: $_light-grey1;
@@ -17,5 +17,7 @@ $bg-bar: $_green;
 $text-common: $_dark;
 $text-titles: $_dark;
 $text-paragraph: $_dark-grey;
+$text-accent: $_green;
 // borders:
 $border-widget: $_mid-grey;
+$border-arrows: $_dark-grey;
