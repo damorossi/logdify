@@ -16,12 +16,12 @@ const TaskListComponent = ({ tasks, name, onClickAction }) => {
 
 	return (
 		<div className="list-accordion">
-			<header className="list-contentHeader" onClick={toggleAccordion}>
+			<header className="list-contentHeader" data-testid="accordion" onClick={toggleAccordion}>
 				<h2 className={`${completedTasks === tasks.length && 'list-title--completed'}`}>
 					<i className="fa fa-file" aria-hidden="true"></i> {name}
 				</h2>
 				<span className={`list-toggleAction ${isActive && 'list-toggleAction--active'}`}>
-					{isActive ? 'Hide' : 'Show'}
+					{isActive ? 'Hide ' : 'Show'}
 				</span>
 			</header>
 			{isActive && (
