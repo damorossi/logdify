@@ -142,7 +142,13 @@ table {
 @import './styling/mixins';
 @import './styling/colors';
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	color: $text-common;
 }
 
@@ -155,4 +161,5 @@ body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	font-weight: 300;
+	width: 100%;
 }
