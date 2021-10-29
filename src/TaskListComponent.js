@@ -3,7 +3,7 @@ import { useState } from 'react/cjs/react.development';
 import TaskItemComponent from './TaskItemComponent';
 import './list.scss';
 
-const TaskListComponent = ({ tasks, name, onClickAction, totalValue }) => {
+const TaskListComponent = ({ tasks, name, onClickAction }) => {
 	let [isActive, setActive] = useState(false);
 
 	const toggleAccordion = () => {
@@ -32,7 +32,6 @@ const TaskListComponent = ({ tasks, name, onClickAction, totalValue }) => {
 							checked={checked}
 							value={value}
 							id={id}
-							totalValue={totalValue}
 							onClickAction={onClickAction}
 							key={`${id}-${value}`}
 						/>

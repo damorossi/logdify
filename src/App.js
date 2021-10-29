@@ -112,7 +112,6 @@ function App() {
 					<TaskListComponent
 						key={`${group.id}-${group.name}`}
 						id={group.id}
-						totalValue={totalValue}
 						tasks={group.tasks}
 						name={group.name}
 						onClickAction={onClickAction}
