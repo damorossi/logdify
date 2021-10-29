@@ -38,12 +38,14 @@ function App() {
 			}, 0);
 		return data;
 	};
+
 	const totalSumArray = () => {
 		const total = onlyTasks().reduce((acc, sum) => {
 			return acc + sum.value;
 		}, 0);
 		return total;
 	};
+
 	const [indexedArr] = useState(getData());
 	const totalInicial = getTotalValue(indexedArr);
 	const [totalValue, setTotalValue] = useState(totalInicial);
@@ -65,6 +67,7 @@ function App() {
 	if (percentege < 0) {
 		getPercentege();
 	}
+
 	const onClickAction = (id, value) => {
 		onlyTasksArray = onlyTasks().map((x) => {
 			if (x.id === id) {
@@ -97,7 +100,7 @@ function App() {
 	return (
 		<div className="app">
 			<header className="app-header">
-				<h1> Grouped Tasks </h1>
+				<h1> Logdify Grouped Tasks </h1>
 				<div className="app-progresBarContainer">
 					<span style={style.progressBar} className="app-progressBar">
 						<span className="app-progressBarContent">{`${percentege.toFixed(0)}%`}</span>
@@ -107,7 +110,7 @@ function App() {
 			<section className="app-content">
 				{indexedArr.map((group) => (
 					<TaskListComponent
-						key={group.id}
+						key={`${group.id}-${group.name}`}
 						id={group.id}
 						totalValue={totalValue}
 						tasks={group.tasks}

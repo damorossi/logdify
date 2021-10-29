@@ -27,6 +27,7 @@
 		margin: 0px;
 
 		.fa {
+			// TODO : get a right icon and bg and color won't be necessary
 			margin-right: 10px;
 			background-color: black;
 			color: white;
@@ -42,10 +43,11 @@
 	}
 
 	&-toggleAction {
-		font-weight: lighter;
-		display: flex;
-		justify-content: space-around;
 		align-items: center;
+		display: flex;
+		font-size: 16px;
+		font-weight: lighter;
+		justify-content: space-around;
 		transition: rotate 0.3s;
 		&::after {
 			transform: (rotate(0deg));
