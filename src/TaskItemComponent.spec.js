@@ -1,6 +1,5 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-// import { render, fireEvent } from './assetes/test-utils';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 import TaskItemComponent from './TaskItemComponent';
@@ -43,7 +42,6 @@ it('Should add a class if checkbox selected', () => {
 	fireEvent.click(trigger);
 	const isClassElementIndDocument = trigger.firstChild.classList.contains('item-toggle--active');
 	expect(isClassElementIndDocument).toBe(true);
-	// console.log(trigger.firstChild.classList.contains('item-toggle--active'));
 });
 it('Should not have a class if checkbox selected', () => {
 	checked = true;
