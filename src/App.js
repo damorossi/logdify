@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './app.scss';
 
 function App() {
-	const [percentege, setPercentege] = useState(0.71 * 81);
+	const [percentege, setPercentege] = useState(-1);
 	let onlyTasksArray = null;
 
 	const getData = () => {
@@ -42,17 +42,30 @@ function App() {
 		const total = onlyTasks().reduce((acc, sum) => {
 			return acc + sum.value;
 		}, 0);
-
 		return total;
 	};
 	const [indexedArr] = useState(getData());
 	const totalInicial = getTotalValue(indexedArr);
 	const [totalValue, setTotalValue] = useState(totalInicial);
-	// const [normalized, setNormalized] = useState(0);
 	const [tasks, setTasks] = useState(onlyTasks());
-	// const [totalSum, setValues] = useState(0);
 	const tot = totalSumArray();
 
+	const setPercenteges = () => {
+		const completed = tasks.filter((x) => x.checked);
+		debugger;
+		const percentege = completed.reduce((acc, curr) => {
+			return acc + (curr.value / tot) * 100;
+		}, 0);
+		setPercentege(percentege);
+	};
+
+	const getPercentege = () => {
+		setPercenteges();
+	};
+
+	if (percentege < 0) {
+		getPercentege();
+	}
 	const onClickAction = (id, value) => {
 		onlyTasksArray = onlyTasks().map((x) => {
 			if (x.id === id) {
@@ -63,21 +76,16 @@ function App() {
 
 		setTotalValue(totalValue + value);
 		setTasks(onlyTasksArray);
-		// setNormalized(calculateValues(id, +value));
 		calculateValues(id, +value);
 	};
 
 	const calculateValues = (id, value = 0) => {
-		// setValues(tot);
-		const completed = tasks.filter((x) => x.checked);
 		onlyTasksArray = onlyTasks();
+		const completed = tasks.filter((x) => x.checked);
 		const completedData = completed.reduce((ac, cur) => {
 			return ac + (cur.value * 100) / totalValue;
 		}, 0);
-		const percentege = completed.reduce((acc, curr) => {
-			return acc + (curr.value / 227) * 100;
-		}, 0);
-		setPercentege(percentege);
+		setPercenteges();
 		setTotalValue(totalValue + value);
 		return completedData;
 	};
